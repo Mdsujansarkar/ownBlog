@@ -17,3 +17,8 @@
 
 Route::get('/', 'UserController@index');
 Route::get('/contact', 'UserController@contact');
+Route::get('/about', 'UserController@about');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

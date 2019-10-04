@@ -27,6 +27,16 @@ class UserController extends Controller
       $home = view('pages.contact');
       return view('master')->with('main_content', $home);
     }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function about()
+    {
+      $about = view('pages.about');
+      return view('master')->with('main_content', $about);
+    }
 
     /**
      * Store a newly created resource in storage.

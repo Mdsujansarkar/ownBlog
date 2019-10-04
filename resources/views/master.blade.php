@@ -27,11 +27,11 @@
     <div id="templatemo_menu_panel">
     	<div id="templatemo_menu_section">
             <ul>
-                <li><a href="index.html"  class="current">Home</a></li>
+                <li><a href="{{URL::to('/')}}"  class="current">Home</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Categories</a></li>
                 <li><a href="#">Archives</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{ URL::to('/about')}}">About</a></li>
                 <li><a href="{{URL::to('/contact')}}">Contact</a></li>
             </ul>
 		</div>
