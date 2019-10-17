@@ -9,12 +9,12 @@
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <meta content="" name="author" />
-   <link href="{{asset('public/admin_asset/assets/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" />
-   <link href="{{asset('public/admin_asset/assets/bootstrap/css/bootstrap-responsive.min.css')}}" rel="stylesheet" />
-   <link href="{{asset('public/admin_asset/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
-   <link href="{{asset('public/admin_asset/css/style.css')}}" rel="stylesheet" />
-   <link href="{{asset('public/admin_asset/css/style-responsive.css')}}" rel="stylesheet" />
-   <link href="{{asset('public/admin_asset/css/style-default.css')}}" rel="stylesheet" id="style_color" />
+   <link href="{{asset('/')}}admin_asset/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="{{asset('/')}}admin_asset/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+   <link href="{{asset('/')}}admin_asset/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+   <link href="{{asset('/')}}admin_asset/css/style.css" rel="stylesheet" />
+   <link href="{{asset('/')}}admin_asset/css/style-responsive.css" rel="stylesheet" />
+   <link href="{{asset('/')}}admin_asset/css/style-default.css" rel="stylesheet" id="style_color" />
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -33,28 +33,29 @@
                 <span>Login</span>
             </div>
         </div>
+
+        
+        {!! Form::open(['url' => '/dashboard','method'=> 'post']) !!}
         <div class="metro double-size green">
-            <form action="http://thevectorlab.net/metrolab/index.html">
                 <div class="input-append lock-input">
-                    <input type="text" class="" placeholder="Username">
+                    <input type="text" class="" name='admin_email' placeholder="Email">
                 </div>
-            </form>
         </div>
         <div class="metro double-size yellow">
-            <form action="http://thevectorlab.net/metrolab/index.html">
                 <div class="input-append lock-input">
-                    <input type="password" class="" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                 </div>
-            </form>
+
         </div>
         <div class="metro single-size terques login">
-            <form action="http://thevectorlab.net/metrolab/index.html">
                 <button type="submit" class="btn login-btn">
                     Login
                     <i class=" icon-long-arrow-right"></i>
                 </button>
-            </form>
+
         </div>
+      
+      {!! Form::close() !!}
         <div class="metro double-size navy-blue ">
             <a href="index.html" class="social-link">
                 <i class="icon-facebook-sign"></i>

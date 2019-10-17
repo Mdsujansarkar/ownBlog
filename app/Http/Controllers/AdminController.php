@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
+use Session;
+use DB;
 class AdminController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.admin_login');
     }
 
     /**
@@ -21,9 +23,15 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function adminLogin(Request $request)
     {
-        //
+        $email = $request->admin_email;
+        $password = $request->Password;
+        $result = DB::table('admin')
+                ->where('admin_email', $email)
+                ->where('password', md5($password))
+                ->first();
+        return view('admin.admin_master');
     }
 
     /**
@@ -32,9 +40,9 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function adminLogins()
     {
-        //
+        return view('admin.admin_login');
     }
 
     /**
